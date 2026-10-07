@@ -1,0 +1,22 @@
+embed:
+  css:
+    component:
+      css/velxio-embed.css: {}
+
+ckeditor5.velxio:
+  js:
+    js/build/velxioEmbed.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+    - core/drupal
+    - core/drupal.ajax
+    # editorDialogSave AJAX command + the `editor:dialogsave` event the
+    # command's saveCallback listens for -- core's own ckeditor5 library
+    # doesn't pull this in itself (its built-in plugins use CKEditor5-native
+    # balloon forms, not the classic Drupal-dialog pattern this plugin uses).
+    - editor/drupal.editor.dialog
+
+admin.ckeditor5:
+  css:
+    theme:
+      css/velxio-admin.css: {}

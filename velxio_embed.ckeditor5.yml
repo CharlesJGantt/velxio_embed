@@ -1,0 +1,13 @@
+velxio_embed_velxioembed:
+  ckeditor5:
+    plugins:
+      - velxioEmbed.VelxioEmbed
+  drupal:
+    label: "Velxio Circuit"
+    library: velxio_embed/ckeditor5.velxio
+    admin_library: velxio_embed/admin.ckeditor5
+    toolbar_items:
+      VelxioEmbed:
+        label: "Insert Velxio Circuit"
+    elements:
+      - <div class="velxio-embed-wrapper" data-velxio-project data-velxio-board data-velxio-height>

@@ -1,0 +1,12 @@
+name: 'Velxio Embed'
+type: module
+description: 'Embeds the self-hosted Velxio Arduino/ESP32 circuit simulator into articles via CKEditor 5, and provides a standalone sandbox page.'
+core_version_requirement: ^10 || ^11
+package: Velxio
+dependencies:
+  - drupal:filter
+  - drupal:ckeditor5
+  - drupal:file
+  - drupal:image
+  - drupal:media
+  - drupal:path

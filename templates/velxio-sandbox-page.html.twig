@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Standalone Velxio Lab sandbox page -- the full Velxio editor.
+ *
+ * Available variables:
+ * - iframe_src: full URL to the /editor route on the Velxio instance.
+ */
+#}
+<div class="velxio-sandbox-page">
+  <iframe
+    src="{{ iframe_src }}"
+    loading="eager"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-downloads"
+    referrerpolicy="no-referrer"
+    title="Velxio Lab"
+  ></iframe>
+</div>

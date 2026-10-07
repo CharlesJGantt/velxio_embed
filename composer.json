@@ -1,0 +1,14 @@
+{
+    "name": "charlesjgantt/velxio_embed",
+    "description": "Embed live Velxio Arduino/ESP32 circuit simulators in Drupal content via a CKEditor 5 button, with a media type and save endpoint for circuit files.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://github.com/CharlesJGantt/velxio_embed",
+    "keywords": ["drupal", "ckeditor5", "arduino", "simulator", "velxio"],
+    "require": {
+        "drupal/core": "^10 || ^11"
+    },
+    "suggest": {
+        "drupal/entity_usage": "Track which content embeds which Velxio Project media."
+    }
+}

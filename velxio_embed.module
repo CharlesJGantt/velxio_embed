@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Velxio Embed module.
+ */
+
+/**
+ * Implements hook_theme().
+ *
+ * Registers the Twig templates for the article embed and the standalone
+ * sandbox page.
+ */
+function velxio_embed_theme($existing, $type, $theme, $path) {
+  return [
+    'velxio_embed' => [
+      'variables' => [
+        'iframe_src' => NULL,
+        'height' => NULL,
+      ],
+      'template' => 'velxio-embed',
+    ],
+    'velxio_embed_sandbox_page' => [
+      'variables' => [
+        'iframe_src' => NULL,
+      ],
+      'template' => 'velxio-sandbox-page',
+    ],
+  ];
+}

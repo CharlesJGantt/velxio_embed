@@ -1,0 +1,54 @@
+.velxio-embed {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 1.5em auto;
+  border: 1px solid #d5d9df;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.velxio-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* !important throughout: this rule's job is to take the full viewport away
+ * from the active theme for a full-screen app page. Themes' own CSS often
+ * outranks a plain class selector in load order, so without !important the
+ * div can compute to `position: static` and the theme's fixed header and
+ * footer show through around the iframe. This is a true full-bleed takeover;
+ * if your theme's header needs to coexist with it, override these rules in
+ * your theme and reserve that space deliberately.
+ */
+.velxio-sandbox-page {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  background: #1e1e1e !important;
+  overflow: hidden !important;
+}
+
+.velxio-sandbox-page iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+}
+
+/* Editor-canvas placeholder shown in place of the real embed while
+   editing an article (CKEditor doesn't render the iframe live). */
+.velxio-card-editor-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #eceef1;
+  border: 1px dashed #aab0ba;
+  border-radius: 6px;
+  color: #57606a;
+  font-family: monospace;
+  font-size: 13px;
+}

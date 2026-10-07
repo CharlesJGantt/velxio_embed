@@ -1,0 +1,50 @@
+velxio_embed.sandbox:
+  path: '/velxio-lab'
+  defaults:
+    _controller: '\Drupal\velxio_embed\Controller\SandboxController::build'
+    _title: 'Velxio Lab'
+  requirements:
+    _access: 'TRUE'
+
+velxio_embed.settings:
+  path: '/admin/config/content/velxio'
+  defaults:
+    _form: '\Drupal\velxio_embed\Form\VelxioSettingsForm'
+    _title: 'Velxio Embed settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+velxio_embed.embed_dialog:
+  path: '/admin/config/content/velxio/embed-dialog'
+  defaults:
+    _form: '\Drupal\velxio_embed\Form\VelxioEmbedDialogForm'
+    _title: 'Insert Velxio Circuit'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: TRUE
+
+velxio_embed.project_file:
+  path: '/velxio-project/{media}/file'
+  defaults:
+    _controller: '\Drupal\velxio_embed\Controller\ProjectFileController::serve'
+  requirements:
+    _entity_access: 'media.view'
+  options:
+    parameters:
+      media:
+        type: entity:media
+
+velxio_embed.save_project:
+  path: '/api/velxio/save-project'
+  defaults:
+    _controller: '\Drupal\velxio_embed\Controller\SaveProjectController::save'
+  methods: [POST, OPTIONS]
+  requirements:
+    # Access is enforced inside the controller via a bearer token compared
+    # against velxio_embed.settings:save_api_token_hash -- not Drupal's own
+    # permission system, since the caller (the Lab, on a different origin,
+    # possibly not even this Drupal install's domain) has no Drupal session.
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE

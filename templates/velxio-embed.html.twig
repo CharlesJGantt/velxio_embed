@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Renders one embedded Velxio circuit inside an article.
+ *
+ * Available variables:
+ * - iframe_src: full URL to the /embed route on the Velxio instance.
+ * - height: embed height in pixels.
+ */
+#}
+<div class="velxio-embed" style="height: {{ height }}px;">
+  <iframe
+    src="{{ iframe_src }}"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-downloads allow-modals"
+    referrerpolicy="no-referrer"
+    title="Interactive Velxio circuit simulator"
+  ></iframe>
+</div>

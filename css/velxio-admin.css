@@ -1,0 +1,14 @@
+/* The CKEditor 5 toolbar-builder widget (Available buttons / Active
+ * toolbar on the text format edit form) doesn't run the plugin's real
+ * componentFactory callback, so ButtonView's `icon:` property never
+ * renders there -- only in the live editor elsewhere. This CSS-only
+ * fallback targets the class Drupal auto-generates for the button
+ * (ckeditor5-toolbar-button-<toolbar item key>) directly with a real
+ * image asset. Same approach as this site's printables_embed module. */
+.ckeditor5-toolbar-button-VelxioEmbed,
+.ck.ck-button .ck-icon.ck-button__icon[class*="VelxioEmbed"] {
+  background-image: url('../images/velxio-icon.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}

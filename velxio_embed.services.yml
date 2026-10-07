@@ -1,0 +1,6 @@
+services:
+  velxio_embed.save_project_cors_preflight_subscriber:
+    class: Drupal\velxio_embed\EventSubscriber\SaveProjectCorsPreflightSubscriber
+    arguments: ['@config.factory']
+    tags:
+      - { name: event_subscriber }

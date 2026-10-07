@@ -1,0 +1,4 @@
+base_url: 'https://velxio.example.com'
+default_embed_height: 600
+save_api_token_hash: ''
+save_allowed_origins: []
